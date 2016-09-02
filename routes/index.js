@@ -23,9 +23,13 @@ router.get('/newuser', function(req, res) {
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
 });
-/* GET About page. */
+/* GET index page. */
 router.get('/index', function(req, res, next) {
   res.render('home', { title: 'About' });
+});
+/* GET events page. */
+router.get('/events', function(req, res, next) {
+  res.render('events', { title: 'About' });
 });
 /* POST to Add User Service */
 router.post('/adduser', function(req, res) {
