@@ -1,0 +1,4 @@
+show dbs/collections
+shuse data
+db.collectionName.find()
+db.usercollection.remove( {"username":"testuser"})
