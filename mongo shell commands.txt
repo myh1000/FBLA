@@ -1,4 +1,4 @@
 show dbs/collections
-shuse data
-db.collectionName.find()
+use data
+db.usercollection.find()
 db.usercollection.remove( {"username":"testuser"})

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title><%= title %> | Node.js Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add New User</h1>
+    <form id="formAddUser" name="adduser" method="post" action="/adduser">
+        <input id="inputUserName" type="text" placeholder="username" name="username">
+        <input id="inputUserEmail" type="text" placeholder="useremail" name="useremail">
+        <button id="btnSubmit" type="submit">submit</button>
+    </form>
+</body>
+
+</html>
