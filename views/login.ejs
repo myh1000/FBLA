@@ -77,8 +77,13 @@
                     </li>
                     <li>
                         <a href="resources">Resources</a>
-                    </li><li>
-                        <a href="registration">Login</a>
+                    </li>
+                    <li>
+                        <% if (login) { %>
+                            <a href="logout">Logout</a>
+                        <% }else{ %>
+                            <a href="login">Login</a>
+                        <% } %>
                     </li>
                 </ul>
             </div>
@@ -107,6 +112,9 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
+            <div>
+                <p id="message"><%= message %></p>
+            </div>
             No account yet? <a href="registration">Sign up now!</a>
         </div>
 

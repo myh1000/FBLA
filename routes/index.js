@@ -13,6 +13,12 @@ var isAuthenticated = function (req, res, next) {
 
 module.exports = function(passport){
 
+	router.use(function (req, res, next) {
+		res.locals.login = req.isAuthenticated();
+		res.locals.user = req.user;
+		next();
+	});
+
     /* GET home page. */
     router.get('/', function(req, res, next) {
       res.render('home', { title: 'Gunn FBLA - Home' });
@@ -58,6 +64,15 @@ module.exports = function(passport){
 		failureRedirect: '/registration',
 		failureFlash : true
 	}));
+	router.get('/logout', function(req, res){
+		req.logout();
+		res.redirect('/');
+	});
+	/* GET Home Page */
+	router.get('/profile', isAuthenticated, function(req, res){
+		res.render('profile', { title: 'Gunn FBLA - Profile', user: req.user });
+	});
+
     return router;
 }
 // module.exports = router;

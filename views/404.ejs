@@ -77,8 +77,13 @@
                     </li>
                     <li>
                         <a href="resources">Resources</a>
-                    </li><li>
-                        <a href="login">Login</a>
+                    </li>
+                    <li>
+                        <% if (login) { %>
+                            <a href="logout">Logout</a>
+                        <% }else{ %>
+                            <a href="login">Login</a>
+                        <% } %>
                     </li>
                 </ul>
             </div>
