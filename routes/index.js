@@ -27,10 +27,6 @@ module.exports = function(passport){
             });
         });
     });
-    /* GET New User page. */
-    router.get('/registration', function(req, res) {
-        res.render('registration', { title: 'Gunn FBLA - User Registration' });
-    });
     /* GET About page. */
     router.get('/about', function(req, res, next) {
       res.render('about', { title: 'Gunn FBLA - About' });
@@ -43,39 +39,25 @@ module.exports = function(passport){
     router.get('/events', function(req, res, next) {
       res.render('events', { title: 'Gunn FBLA - Events' });
     });
-    /* POST to Add User Service */
-    router.post('/adduser', function(req, res) {
-
-        // Set our internal DB variable
-        // var db = req.db;
-        // var validator = req.validator;
-        // // Get our form values. These rely on the "name" attributes
-        // var userName = req.body.uName;
-        // var userEmail = req.body.email;
-        // if (validator.isEmail(userEmail)) {
-        //     // Set our collection
-        //     var collection = db.get('usercollection');
-        //
-        //     // Submit to the DB
-        //     collection.insert({
-        //         "username" : userName,
-        //         "email" : userEmail
-        //     }, function (err, doc) {
-        //         if (err) {
-        //             // If it failed, return error
-        //             res.send("There was a problem adding the information to the database.");
-        //         }
-        //         else {
-        //             // And forward to success page
-        //             res.redirect("profile");
-        //         }
-        //     });
-        // }
-        // else {
-        //     console.log("Bad Email, not adding to database");
-        //     res.redirect('back')
-        // }
-    });
+	/* GET New User page. */
+	router.get('/login', function(req, res) {
+		res.render('login', { title: 'Gunn FBLA - Login', message: req.flash('message')});
+	});
+	router.post('/login', passport.authenticate('login', {
+		successRedirect: '/profile',
+		failureRedirect: '/login',
+		failureFlash : true
+	}));
+	/* GET New User page. */
+	router.get('/registration', function(req, res) {
+		res.render('registration', { title: 'Gunn FBLA - User Registration', message: req.flash('message')});
+	});
+    /* Handle Registration POST */
+    router.post('/registration', passport.authenticate('signup', {
+		successRedirect: '/profile',
+		failureRedirect: '/registration',
+		failureFlash : true
+	}));
     return router;
 }
 // module.exports = router;
