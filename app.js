@@ -4,15 +4,34 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var validator = require('validator');
-var mongoose = require('mongodb');
-var monk = require('monk')
-var db = monk('localhost:27017/data');
 
-var routes = require('./routes/index');
-var profile = require('./routes/profile');
+var validator = require('validator');
+
+var dbConfig = require('./db');
+var mongoose = require('mongoose');
+mongoose.connect(dbConfig.url);
 
 var app = express();
+
+// Configuring Passport
+var passport = require('passport');
+var expressSession = require('express-session');
+// TODO - Why Do we need this key ?
+app.use(expressSession({secret: 'gunnFBLA'}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+ // Using the flash middleware provided by connect-flash to store messages in session
+ // and displaying in templates
+var flash = require('connect-flash');
+app.use(flash());
+
+// Initialize Passport
+var initPassport = require('./passport/init');
+initPassport(passport);
+
+var routes = require('./routes/index')(passport);
+var profile = require('./routes/profile');
 
 //export NODE_ENV=production for production
 
@@ -32,7 +51,7 @@ app.set('port', process.env.PORT || 3000);
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
-    req.db = db;
+    // req.db = db;
     req.validator = validator;
     next();
 });

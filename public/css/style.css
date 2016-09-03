@@ -415,10 +415,7 @@ div.center {
     height: 504px;
 }
 }
-.wrapper {
-  min-height: 100%;
-  margin-bottom: -164px;
-}
+
 /* Footer Styles */
 footer.footer {
     background-color: #282a2c;
