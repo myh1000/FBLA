@@ -2,9 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 html {
     height: 100%;
+    margin: 0;
 }
 body {
     height: 100%;
+    margin: 0;
     padding-top: 50px;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -413,9 +415,11 @@ div.center {
     height: 504px;
 }
 }
-
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -164px;
+}
 /* Footer Styles */
-
 footer.footer {
     background-color: #282a2c;
     color: #fff;
