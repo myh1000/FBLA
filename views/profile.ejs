@@ -75,9 +75,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="resources">Resources</a>
-                    </li>
+                    <% if (login) { %>
+                        <li>
+                            <a href="profile">Profile</a>
+                        </li>
+                    <% } %>
                     <li>
                         <% if (login) { %>
                             <a href="logout">Logout</a>
@@ -93,20 +95,20 @@
     </nav>
     <div class="wrapper">
         <br><br>
-    <div class="container">
-        <div class="row heading">
-    		<h1>Welcome, <%= user.firstName %> <%= user.lastName %> </h1>
-    	</div>
-        <div class="row">
-            <li>Email: <%= user.email %></li>
-            <li>Year: <%= user.year %></li>
-            <li>Student ID: <%= user.studentID %></li>
+        <div class="container">
+            <div class="row heading">
+        		<h1>Welcome, <%= user.firstName %> <%= user.lastName %> </h1>
+        	</div>
+            <div class="row">
+                <li>Email: <%= user.email %></li>
+                <li>Year: <%= user.year %></li>
+                <li>Student ID: <%= user.studentID %></li>
+            </div>
+
+
         </div>
-
-
     </div>
-    <div class="push"></div>
-    </div>
+
     <!-- Footer -->
     <%- include('partials/footer') %>
 

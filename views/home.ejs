@@ -75,9 +75,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="resources">Resources</a>
-                    </li>
+                    <% if (login) { %>
+                        <li>
+                            <a href="profile">Profile</a>
+                        </li>
+                    <% } %>
                     <li>
                         <% if (login) { %>
                             <a href="logout">Logout</a>

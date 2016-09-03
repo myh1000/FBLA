@@ -15,7 +15,7 @@ module.exports = function(passport){
 
 	router.use(function (req, res, next) {
 		res.locals.login = req.isAuthenticated();
-		res.locals.user = req.user;
+		// res.locals.user = req.user;
 		next();
 	});
 

@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Configuring Passport
 var passport = require('passport');
-var expressSession = require('express-session');
+var expressSession = require('cookie-session');
 // TODO - Why Do we need this key ?
 app.use(expressSession({secret: 'gunnFBLA'}));
 app.use(passport.initialize());
