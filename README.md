@@ -1,16 +1,18 @@
 # FBLA
 server for FBLA
 
-### setup
+## setup
 ```
 npm install
 ```
+
+## running
 run server with ```node app.js```
 run database with ```mongod --dbpath=data```
 
 serves on port 3000
 
-TODO:
+### TODO:
 - Authentication -- ```passport```
 - Sanitizing inputs -- ```validator``` and ```vue.js```
 - Making it look good
