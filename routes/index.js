@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express' });
+  res.render('home', { title: 'Gunn FBLA - Home' });
 });
 /* GET userlist test page. */
 router.get('/userlist', function(req, res) {
@@ -16,20 +16,20 @@ router.get('/userlist', function(req, res) {
     });
 });
 /* GET New User page. */
-router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
+router.get('/registration', function(req, res) {
+    res.render('registration', { title: 'Gunn FBLA - User Registration' });
 });
 /* GET About page. */
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About' });
+  res.render('about', { title: 'Gunn FBLA - About' });
 });
 /* GET index page. */
 router.get('/index', function(req, res, next) {
-  res.render('home', { title: 'About' });
+  res.render('home', { title: 'Gunn FBLA - Home' });
 });
 /* GET events page. */
 router.get('/events', function(req, res, next) {
-  res.render('events', { title: 'About' });
+  res.render('events', { title: 'Gunn FBLA - Events' });
 });
 /* POST to Add User Service */
 router.post('/adduser', function(req, res) {
