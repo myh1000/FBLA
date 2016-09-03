@@ -10,7 +10,7 @@ var monk = require('monk')
 var db = monk('localhost:27017/data');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var profile = require('./routes/profile');
 
 var app = express();
 
@@ -37,7 +37,7 @@ app.use(function(req,res,next){
     next();
 });
 app.use('/', routes);
-app.use('/users', users);
+app.use('/profile', profile);
 
 var listener = app.listen(app.get('port'), function(){
     console.log('Listening on port http://localhost:' + listener.address().port); //Listening on port 8888
