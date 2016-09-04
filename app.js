@@ -1,20 +1,20 @@
 var express = require('express');
-var path = require('path');
-// var favicon = require('serve-favicon');
+var favicon = require('serve-favicon');
+var mongoose = require('mongoose');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var app = express();
+// Using the flash middleware provided by connect-flash to store messages in session
+// and displaying in templates
+var flash = require('connect-flash');
 
 var dbConfig = require('./db');
-var mongoose = require('mongoose');
 // Connect to DB
 mongoose.connect(dbConfig.url);
 
-var app = express();
-console.log(app.get('env'));
-
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', 'views');
 app.set('view engine', 'ejs');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,7 +22,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 // Configuring Passport
 var passport = require('passport');
@@ -32,17 +32,14 @@ app.use(expressSession({secret: 'gunnFBLA'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
- // Using the flash middleware provided by connect-flash to store messages in session
- // and displaying in templates
-var flash = require('connect-flash');
 app.use(flash());
 
 // Initialize Passport
 var initPassport = require('./passport/init');
 initPassport(passport);
 
-var routes = require('./routes/index')(passport);
-app.use('/', routes);
+require('./routes/index')(app, passport);
+// app.use('/', routes);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -68,4 +65,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status).render(err.status, {title: "Sorry, page not found"});
 });
 
-module.exports = app;
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port http://localhost:' + server.address().port);
+});
+
+console.log(app.get('env'));

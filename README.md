@@ -7,7 +7,7 @@ npm install
 ```
 
 ## running
-run server with ```npm start```
+run server with ```npm start``` or ```node app.js```
 
 run database with ```mongod --dbpath=data```
 

@@ -94,21 +94,20 @@
         <div class="col-md-12">
             <form id="form-signin" method="POST" action="/registration">
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">First Name</label>
                     <input type="name" class="form-control" name="firstName" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="name">Last Name</label>
                     <input type="name" class="form-control" name="lastName" required autofocus>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" name="username" required>
+                    <input type="email" class="form-control" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password</label>
                     <input type="password" class='form-control nomargin' name="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Student ID</label>
-                    <input type="number" pattern="[0-9]*" name="studentID" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Year</label>
@@ -119,12 +118,18 @@
                         <option value="Senior">Senior</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="pwd">Student ID</label>
+                    <input type="number" pattern="[0-9]*" name="studentID" class="form-control" required>
+                </div>
                 <!-- <div class="checkbox">
                     <label><input type="checkbox"> Remember me</label>
                 </div> -->
                 <button type="submit" class="btn btn-default">Submit</button>
                 <div>
-                    <p id="message"><%= message %></p>
+                    <% if (message.length > 0) { %>
+                		<p id="message"><%= message %></p>
+                    <% } %>
                 </div>
             </form>
         </div>
