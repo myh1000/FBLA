@@ -1,5 +1,5 @@
 var LocalStrategy   = require('passport-local').Strategy;
-var User = require('../profile');
+var User = require('../passport/profile');
 var async = require('async');
 var crypto = require('crypto');
 var bCrypt = require('bcrypt-nodejs');
