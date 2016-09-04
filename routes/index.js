@@ -17,16 +17,6 @@ module.exports = function(app, passport){
     app.get('/', function(req, res, next) {
       res.render('home', { title: 'Gunn FBLA - Home' });
     });
-    /* GET userlist test page. */
-    app.get('/userlist', function(req, res) {
-        var db = req.db;
-        var collection = db.get('usercollection');
-        collection.find({},{},function(e,docs){
-            res.render('userlist', {
-                "userlist" : docs
-            });
-        });
-    });
     /* GET About page. */
     app.get('/about', function(req, res, next) {
       res.render('about', { title: 'Gunn FBLA - About' });
