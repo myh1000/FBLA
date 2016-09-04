@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
 
     <title><%= title %></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <style>
       body {padding-top: 0;}
     </style>
 
     <!-- Custom Fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/myriad.css" rel="stylesheet" type="text/css">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/myriad.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -100,14 +100,14 @@
         		<h1>Login</h1>
         	</div>
             <div class="row">
-                <form id="myform" method="post" action="/login">
+                <form id="myform" method="post">
                     <div class="form-group">
-                        <label for="email">Email address:</label>
-                        <input type="email" class="form-control" name="email">
+                        <label for="password">New Password</label>
+                        <input type="password" class="form-control" name="password">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" name="password">
+                        <label for="confirm">Password:</label>
+                        <input type="password" class="form-control" name="confirm">
                     </div>
                     <!-- <div class="checkbox">
                         <label><input type="checkbox"> Remember me</label>
@@ -117,11 +117,6 @@
                         <a href="forgot">Forgot Password?</a>
                     </div>
                 </form>
-                <div>
-                    <% if (message.length > 0) { %>
-                		<p id="message"><%= message %></p>
-                    <% } %>
-                </div>
                 No account yet? <a href="registration">Sign up now!</a>
             </div>
 
@@ -152,10 +147,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
 
     <!-- Custom JavaScript -->
-    <script src="javascripts/main.js"></script>
+    <script src="/javascripts/main.js"></script>
     <!-- <script>
         $(document).ready(function () {
             $('#myform').on('submit', function(e) {
