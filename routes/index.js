@@ -16,6 +16,21 @@ module.exports = function(app, passport){
     app.get('/', function(req, res, next) {
       res.render('home', { title: 'Gunn FBLA - Home' });
     });
+	app.get('/news', function(req, res, next) {
+      res.render('news', { title: 'Gunn FBLA - News' });
+    });
+	app.get('/projects', function(req, res, next) {
+      res.render('projects', { title: 'Gunn FBLA - Projects' });
+    });
+	app.get('/ae', function(req, res, next) {
+      res.render('ae', { title: 'Gunn FBLA - American Enterprise' });
+    });
+	app.get('/pb', function(req, res, next) {
+      res.render('pb', { title: 'Gunn FBLA - Partnership with Business' });
+    });
+	app.get('/cs', function(req, res, next) {
+      res.render('cs', { title: 'Gunn FBLA - Community Service' });
+    });
     /* GET About page. */
     app.get('/about', function(req, res, next) {
       res.render('about', { title: 'Gunn FBLA - About' });

@@ -15,7 +15,6 @@
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
 
-
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/myriad.css" rel="stylesheet" type="text/css">
@@ -66,24 +65,15 @@
                                 <a href="ae">American Enterprise</a>
                             </li>
                             <li>
-                                <a href="pb">Partnership with Business</a>
+                                <a class="nav-bold" href="pb">Partnership with Business</a>
                             </li>
                             <li>
                                 <a href="cs">Community Service</a>
                             </li>
                         </ul>
                     </li>
-                    <% if (login) { %>
-                        <li>
-                            <a href="profile">Profile</a>
-                        </li>
-                    <% } %>
                     <li>
-                        <% if (login) { %>
-                            <a href="logout">Logout</a>
-                        <% }else{ %>
-                            <a class="nav-bold" href="login">Login</a>
-                        <% } %>
+                        <a href="login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -91,42 +81,39 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="wrapper">
-        <div class="container">
-            <div class="row heading">
-        		<h1>Login</h1>
-        	</div>
-            <div class="row">
-                <form id="myform" method="post" action="/login">
-                    <div class="form-group">
-                        <label for="email">Email address:</label>
-                        <input type="email" class="form-control" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" name="password">
-                    </div>
-                    <!-- <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
-                    </div> -->
-                    <div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                        <a href="forgot">Forgot Password?</a>
-                    </div>
-                </form>
-                <div>
-                    <% if (message.length > 0) { %>
-                		<p id="message"><%= message %></p>
-                    <% } %>
-                </div>
-                No account yet? <a href="registration">Sign up now!</a>
-            </div>
 
+    <!-- Page Content -->
+     <div class="container">
+        <div class="row heading center">
+            <h1>Partnership with Business</h1>
+        </div>
+        <div class="row">
+            <p>2016-2017 Partnership with Business Chairs: Celine Shaw and Max Wang</p>
+        </div>
+        <br />
+        <div class="row">
+            <h3>What is Partnership with Business?</h3>
+            <p>Partnership with Business is an FBLA project in which we form a mutually beneficial partnership with a corporation. This allows students to learn about a business and interact with the business community. We then submit a report to FBLA at the state conference detailing our partnership plan, what we learned, and the impact of the project.</p>
+        </div>
+         <div class="row">
+            <h3>Our Project</h3>
+            <p>This year we are partnering with NonChat. This innovative app is an exciting and unprecedented form of social media that incorporates augmented reality and animated avatars to interact with your friends. More information about our partnership <a href="https://drive.google.com/file/d/0BzMX1vrDzy0RMXdId2JzZ3BsOXBHdWxhZ3NtOUw1MHRtUHBR/view" target="_blank">here.</a></p>
+        </div>
+        <div class="row">
+            <h3>Why You Should Join</h3>
+            <p>Learning about business is something that is best done in real life, rather than sitting at a classroom desk or studying behind a computer. You will have the opportunity to interact and make connections with real business leaders and learn about marketing and management. Partnership with Business is a fun way to gain a solid introduction to the business world.</p>
+        </div>
+        <div class="row">
+            <h3>Have questions or want to join?</h3>
+            <p>Download NonChat on your phone, and then fill out your information <a href="https://docs.google.com/forms/d/e/1FAIpQLSetRSPjJnx6AK9MyZwE74wiUjDurrWTI7aKPG3eo51mQlK4Xw/viewform?c=0&amp;w=1" target="_blank">here.</a> By signing up this way, you can join the <a href="https://docs.google.com/document/d/1KK8jCWq1zwFE9h3IBAGKfIOxDghWDlMpO4LpEotJAxQ/edit" target="_blank">Honors Club.</a> Make sure to also give feedback about the app <a href="https://docs.google.com/forms/d/1RCxJLiqvTw020FDz_a9bCRDTjf_fXyfXhPn4AkDwbDk/viewform?edit_requested=true" target="_blank">here.</a> Thanks for joining!</p>
+
+            <p>Want to contact us? Shoot us a message at <a href="mailto:fblagunn@gmail.com">fblagunn@gmail.com.</a>
         </div>
     </div>
 
+
     <!-- Footer -->
-    <%- include('partials/sticky-footer') %>
+    <%- include('partials/footer') %>
 
     <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -155,7 +142,7 @@
     <script src="javascripts/main.js"></script>
     <!-- <script>
         $(document).ready(function () {
-            $('#myform').on('submit', function(e) {
+            $('#form-signin').on('submit', function(e) {
                 e.preventDefault();
                 $.ajax({
                     url : $(this).attr('action') || window.location.pathname,
@@ -165,7 +152,6 @@
                         $("#form_output").html(data);
                     },
                     error: function (jXHR, textStatus, errorThrown) {
-                        alert(errorThrown);
                     }
                 });
             });

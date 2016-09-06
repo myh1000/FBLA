@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
 
     <title><%= title %></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-
+    <link href="/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/myriad.css" rel="stylesheet" type="text/css">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/myriad.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,7 +62,7 @@
                                 <a href="projects">About Projects</a>
                             </li><li>
                             </li><li>
-                                <a href="ae">American Enterprise</a>
+                                <a class="nav-bold" href="ae">American Enterprise</a>
                             </li>
                             <li>
                                 <a href="pb">Partnership with Business</a>
@@ -82,7 +81,7 @@
                         <% if (login) { %>
                             <a href="logout">Logout</a>
                         <% }else{ %>
-                            <a class="nav-bold" href="login">Login</a>
+                            <a href="login">Login</a>
                         <% } %>
                     </li>
                 </ul>
@@ -91,39 +90,36 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="wrapper">
-        <div class="container">
-            <div class="row heading">
-        		<h1>Login</h1>
-        	</div>
-            <div class="row">
-                <form id="myform" method="post" action="/login">
-                    <div class="form-group">
-                        <label for="email">Email address:</label>
-                        <input type="email" class="form-control" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" name="password">
-                    </div>
-                    <!-- <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
-                    </div> -->
-                    <div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                        <a href="forgot">Forgot Password?</a>
-                    </div>
-                </form>
-                <div>
-                    <% if (message.length > 0) { %>
-                		<p id="message"><%= message %></p>
-                    <% } %>
-                </div>
-                No account yet? <a href="registration">Sign up now!</a>
-            </div>
 
+    <!-- Page Content -->
+     <div class="container">
+        <div class="row heading center">
+            <h1>American Enterprise</h1>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <p>2016-2017 American Enterprise Chairs: Alisen Chung and Michael Lu</p>
+        </div>
+        <br />
+        <div class="row">
+            <h3>What is American Enterprise?</h3>
+            <p>American Enterprise is an FBLA project in which we design and implement a education program within our community to increase understanding of the American enterprise system. We then submit a report to FBLA at the state conference detailing our project, how we implmeneted it, and the impact of the project on our community.</p>
+        </div>
+         <div class="row">
+            <h3>Our Project</h3>
+            <p>We will have a new project once school starts. Stay tuned!</p>
+        </div>
+        <!--<div class="row">
+            <h3>Why You Should Join</h3>
+            <p></p>
+        </div>-->
+        <div class="row">
+            <h3>Have questions or want to join?</h3>
+            <p>Contact us at <a href="mailto:fblagunn@gmail.com">fblagunn@gmail.com.</a></p>
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <%- include('partials/sticky-footer') %>
@@ -149,10 +145,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
 
     <!-- Custom JavaScript -->
-    <script src="javascripts/main.js"></script>
+    <script src="/javascripts/main.js"></script>
     <!-- <script>
         $(document).ready(function () {
             $('#myform').on('submit', function(e) {

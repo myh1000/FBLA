@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,6 @@
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
-
 
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="news">News</a>
+                        <a class="nav-bold" href="news">News</a>
                     </li>
                     <li>
                         <a href="about">About</a>
@@ -82,7 +82,7 @@
                         <% if (login) { %>
                             <a href="logout">Logout</a>
                         <% }else{ %>
-                            <a class="nav-bold" href="login">Login</a>
+                            <a href="login">Login</a>
                         <% } %>
                     </li>
                 </ul>
@@ -91,42 +91,94 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="wrapper">
-        <div class="container">
-            <div class="row heading">
-        		<h1>Login</h1>
-        	</div>
-            <div class="row">
-                <form id="myform" method="post" action="/login">
-                    <div class="form-group">
-                        <label for="email">Email address:</label>
-                        <input type="email" class="form-control" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" name="password">
-                    </div>
-                    <!-- <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
-                    </div> -->
-                    <div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                        <a href="forgot">Forgot Password?</a>
-                    </div>
-                </form>
-                <div>
-                    <% if (message.length > 0) { %>
-                		<p id="message"><%= message %></p>
-                    <% } %>
-                </div>
-                No account yet? <a href="registration">Sign up now!</a>
-            </div>
 
+    <!-- Page Content -->
+     <div class="container">
+     	<div class="row heading center">
+    		<h1>News</h1>
+            <h4>Visit our Facebook page for weekly meeting updates!</h4>
+    	</div>
+    </div>
+
+    <!-- To add: Bay Section Conference // LinkedIn Tour // Cisco Tour // State Conference // National Conference-->
+
+
+    <div class="container">
+        <div class="row update">
+            <div class="col-md-8">
+                <h3>National Conference – July 2016</h3>
+                <p>Gunn FBLA took a trip to Atlanta, Georgia, for this year's national leadership conference. Among the exciting activities the chapter did were seeing the fish at Georgia Aquarium, drinking gallons of soda at the World of Coca-Cola, and taking a tour of CNN's world headquarters. Congratulations for a powerful finish to this year's competitions, including a 9th place finish by the Network Design team of Michael Lu, Joshua Wu, and Max Wang, and a 5th place finish by Joseph Ng in Introduction to Business Communications.</p>
+            </div>
+            <div class="col-md-4">
+                <img class="img-responsive" src="img/news/national_2016.jpg" />
+            </div>
+        </div>
+        <hr>
+        <div class="row update">
+            <div class="col-md-4">
+                <img class="img-responsive" src="img/news/state_2016.jpg" />
+            </div>
+            <div class="col-md-8">
+                <h3>State Conference – April 2016</h3>
+                <p>Gunn FBLA continued its strong performance this year at the state conference in Ontario, California. Gunn had 23 top-ten finishers. Congratulations to Joseph Ng and the Banking and Financial Systems team of Bryan Owens, Joseph Lai, and Michael Song for achieiving first place!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row update">
+            <div class="col-md-8">
+                <h3>Section Conference – February 2016</h3>
+                <p>This year's section conference was our most forceful showing yet. With over 40 awards, including two first place prizes by Benjamin Owens and Bryan Owens, Gunn FBLA is starting its competition seaason strong.</p>
+            </div>
+            <div class="col-md-4">
+                <img class="img-responsive" src="img/news/section_2016.jpg" />
+            </div>
+        </div>
+        <hr>
+        <div class="row update">
+        	<div class="col-md-4">
+        		<img class="img-responsive" src="img/news/ldi_2015.jpg" />
+        	</div>
+            <div class="col-md-8">
+                <h3>LDI – October 2015</h3>
+                <p>LDI took place the weekend of Halloween, but the conference was anything but scary. It was fun and exciting for everyone, and it included inspirational guest speakers, educational workshops, and engaging activities, including a dance in the evening.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row update">
+            <div class="col-md-8">
+                <h3>Club Fair – September 2015</h3>
+                <p>The club fair took place on September 18. FBLA showed off its broad range of plaques and awards, enticing many to sign up. It was a successful day for FBLA. With over fifty new members, FBLA is one of the largest clubs in the school. Get ready for another year of conferences and becoming a better businessperson!</p>
+            </div>
+            <div class="col-md-4">
+                <img class="img-responsive" src="img/news/clubfair_2015.jpg" />
+            </div>
+        </div>
+        <hr>
+        <div class="row update">
+            <div class="col-md-4">
+                <img class="img-responsive" src="img/news/national_2015.jpg" />
+            </div>
+            <div class="col-md-8">
+                <h3>National Conference – July 2015</h3>
+                <p>Joseph Ng, Sam Winslow, and Bryan Owens traveled to the windy city of Chicago to participate in the 50,000-person National Leadership Conference. They braved the nation's toughest competition and came out on top. Congratulations to Joseph Ng, who won seventh place in the nation for Business Procedures.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row update">
+            <div class="col-md-8">
+                <h3>State Conference – April 2015</h3>
+                <p>Gunn FBLA went to the state conference in Santa Clara. Through three days of fun and excitement, we participated in competitions, tests, activities, and games. We went to Great America, we went swimming, and overall just had a great time. Many of our members won awards, including Joseph Ng, Sam Winslow, Ben Owens, and Bryan Owens. A great start for a first year chapter!</p>
+            </div>
+        	<div class="col-md-4">
+        		<img class="img-responsive" src="img/news/state_2015.jpg" />
+        	</div>
         </div>
     </div>
 
+
+
     <!-- Footer -->
-    <%- include('partials/sticky-footer') %>
+    <%- include('partials/footer') %>
 
     <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -153,24 +205,8 @@
 
     <!-- Custom JavaScript -->
     <script src="javascripts/main.js"></script>
-    <!-- <script>
-        $(document).ready(function () {
-            $('#myform').on('submit', function(e) {
-                e.preventDefault();
-                $.ajax({
-                    url : $(this).attr('action') || window.location.pathname,
-                    type: "POST",
-                    data: $(this).serialize(),
-                    success: function (data) {
-                        $("#form_output").html(data);
-                    },
-                    error: function (jXHR, textStatus, errorThrown) {
-                        alert(errorThrown);
-                    }
-                });
-            });
-        });
-    </script> -->
+    <!-- <script src="js/nav.js"></script> -->
+
 
 
 
