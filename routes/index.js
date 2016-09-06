@@ -58,7 +58,11 @@ module.exports = function(app, passport){
 	}));
 	/* GET New User page. */
 	app.get('/registration', function(req, res) {
-		res.render('registration', { title: 'Gunn FBLA - User Registration', message: req.flash('message')});
+		if(req.isAuthenticated(req, res)) {
+            res.redirect('/profile');
+        } else {
+			res.render('registration', { title: 'Gunn FBLA - User Registration', message: req.flash('message')});
+		}
 	});
     /* Handle Registration POST */
     app.post('/registration', passport.authenticate('signup', {
@@ -71,11 +75,15 @@ module.exports = function(app, passport){
 		res.redirect('/');
 	});
 	app.get('/forgot', function(req, res) {
-		res.render('forgot', {
-			user: req.user,
-			title: 'Gunn FBLA - Forgot Password',
-			message: req.flash('message')
-		});
+		if(req.isAuthenticated(req, res)) {
+            res.redirect('/profile');
+        } else {
+			res.render('forgot', {
+				user: req.user,
+				title: 'Gunn FBLA - Forgot Password',
+				message: req.flash('message')
+			});
+		}
 	});
 	app.post('/forgot', function(req, res, next) {
 		async.waterfall([
